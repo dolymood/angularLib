@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<script type="text/javascript" data-main="app" src="http://requirejs.org/docs/release/2.1.11/minified/require.js"></script>
+</head>
+<body>
+	<ul ngd-click="itemClick($event, item)" selector="a">
+		<li ng-repeat="item in list"><a href="#">{{item.name}}</a></li>
+	</ul>
+</body>
+</html>

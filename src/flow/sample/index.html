@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<script type="text/javascript" data-main="app" src="http://requirejs.org/docs/release/2.1.11/minified/require.js"></script>
+</head>
+<body>
+	<div flow-init="{target:$parent.target,fileParameterName:'fileData',query:$parent.query,getFolderTarget:$parent.getFolderTarget,parseTarget:$parent.parseTarget,testChunks:false}" flow-files-submitted="$flow.upload()" flow-name="flowObj.flow" flow-file-success="fileSuccess($file,$message)">
+		<div flow-drop>
+			<span flow-btn>上传文件</span>
+			<span flow-btn flow-directory>上传文件夹</span>
+		</div>
+		<ul flow-transfers>
+			<li ng-repeat="f in parsedTransfers">
+				<div>
+					{{f.name}}
+				</div>
+				<div>
+					{{f.progress()}}
+				</div>
+				<div>
+					{{parseFspeed(f)}}
+				</div>
+				<div>
+					{{parseFsize(f)}}
+				</div>
+				<a href="#" ng-click="f.pause()">暂停</a>
+				<a href="#" ng-click="f.resume()">继续</a>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

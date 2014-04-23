@@ -1,0 +1,70 @@
+button {overflow: visible; width: auto; padding: 0; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; text-indent: 0; outline: 0; cursor: pointer; border: 0; background: none; }
+.noVis {visibility: hidden!important; opacity: 0!important; filter: alpha(opacity=0); -webkit-transition: all ease-out .3s; transition: all ease-out .3s; }
+.i {cursor:pointer;width: 16px; height: 16px; overflow: hidden; display: inline-block; background: url(//s4.ksyun.com/i/4/229.png) no-repeat -100%; margin: 0 0 .25em; line-height: 0!important; text-align: left; vertical-align: middle; text-decoration: none!important; -webkit-text-size-adjust: none; }
+.iImgOp {width: 20px; height: 20px; background: url(//s4.ksyun.com/i/4/207.png) no-repeat; }
+.iImgOp2 {background-position:-34px 0;}
+.iImgOp3 {background-position:-69px 0;}
+.iImgOp4 {background-position:-104px 0;}
+.iImgOp5 {background-position:-139px 0;}
+.iImgOp6 {background-position:-174px 0;}
+.iImgOp7 {background-position:-256px 0;}
+.iImgOp8 {background-position:-289px 0;}
+:hover > .iImgOp {background-position:0 -40px;}
+:hover > .iImgOp2 {background-position:-34px -40px;}
+:hover > .iImgOp3 {background-position:-69px -40px;}
+:hover > .iImgOp4 {background-position:-104px -40px;}
+:hover > .iImgOp5 {background-position:-139px -40px;}
+:hover > .iImgOp6 {background-position:-174px -40px;}
+:hover > .iImgOp7 {background-position:-256px -40px;}
+:hover > .iImgOp8 {background-position:-289px -40px;}
+.dialogX {z-index: 4; top: -40px; left: 100%; position: relative; display: block; width: 30px; height: 30px; margin: 0 10px -30px -40px; background: url(//s4.ksyun.com/i/4/175.png) no-repeat; }
+.overlay {z-index: 1040; top: 0; left: 0; bottom: 0; right: 0; position: fixed; background: #000; opacity: .5; filter: alpha(opacity=50); }
+
+.imageViewerOverlay {z-index:2000;opacity:.75;filter:alpha(opacity=75);}
+
+.imageViewer {z-index:2005;top:0;left:0;bottom:0;right:0;position:fixed;min-width:500px;min-height:400px;}
+.imageViewer ~ .overlay {z-index:2008!important;}
+.imageViewer ~ .dialog {z-index:2010!important;}
+.viewerT {position:relative;height:40px;line-height:40px;color:#fff;}
+.viewerT:before {content:'';}
+.viewerT:before {display:block;height:40px;margin-bottom:-40px;background:#000;opacity:.5;filter:alpha(opacity=50);}
+.viewerT .dialogX {top:5px;}
+.viewerT .vt {z-index:4;text-align:right;position:absolute;top:0;right:60px;height:40px;width:190px;color:#fff;background:url(//s4.ksyun.com/i/4/002.png) no-repeat 0 center;}
+.viewerT .title {position:relative;padding-left:20px;}
+.viewerC {top:-40px;position:relative;height:100%;padding:107px 10px 140px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-o-box-sizing:border-box;box-sizing:border-box;}
+.viewerC .leftH, .viewerC .rightH {z-index:2;position:absolute;width:70px;top:90px;bottom:140px;cursor:pointer;}
+.viewerC .leftH {left:10px;}
+.viewerC .rightH {right:10px;}
+.viewerC .cr {position:absolute;top:50%;margin-top:-30px;display:block;width:60px;height:60px;background:url(//s4.ksyun.com/i/4/226.png) no-repeat 0 0}
+.viewerC .leftH .cr {background-position:0 -60px;}
+.viewerC .leftH:hover .cr {background-position:-60px -60px;}
+.viewerC .leftH:active .cr {background-position:-120px -60px;}
+.viewerC .rightH .cr {right:0;background-position:0 0;}
+.viewerC .rightH:hover .cr {background-position:-60px 0;}
+.viewerC .rightH:active .cr {background-position:-120px 0;}
+.viewerC .viewer {position:relative;height:100%;padding:0 70px;}
+.viewerC .imgBder {height:100%;width:100%;overflow:hidden;}
+.viewerC .imgBder.imgLoading {background:url(//s4.ksyun.com/i/4/006.png) no-repeat center}
+.viewerC .imgBder:before {content:''}
+.viewerC .imgBder:before {display:inline-block;width:0;height:100%;vertical-align:middle;}
+.viewerC .imgBder img {vertical-align:middle;max-width:100%;max-height:100%;-webkit-transition:-webkit-transform .2s;-moz-transition:-moz-transform .2s;-o-transition:-o-transform .2s;transition:transform .2s;}
+.viewerC .imgView {text-align:center;position:relative;width:100%;min-height:131px;display:inline-block;vertical-align:middle;background:url(//s4.ksyun.com/i/4/006.png) no-repeat center;}
+.viewerC .imgOpbar {text-align:center;position:absolute;left:70px;right:70px;bottom:-50px;height:30px;line-height:30px;}
+.viewerC .imgOp {display:inline-block;background:#000;padding:0 15px;margin-left:12px;border-radius:15px;}
+.viewerC .imgOp:first-child {margin-left:0;}
+.viewerC .op {margin-left:10px;}
+.viewerB {position:absolute;bottom:0;height:70px;width:100%;overflow:hidden;}
+.viewerB:before {content:'';}
+.viewerB:before {display:block;height:70px;margin-bottom:-70px;background:#000;opacity:.5;filter:alpha(opacity=50);}
+.viewerB .mc {margin-left:50%;position:relative;left:-70px;margin-right:-70px;}
+.viewerB .Bc {text-align:center;position:relative;height:70px;}
+.viewerB .imgc {text-indent:0;width:60px;height:60px;line-height:56px;display:inline-block;overflow:hidden;margin:3px;border:2px solid transparent;cursor:pointer;}
+.viewerB .imgc:before {content:''}
+.viewerB .imgc:before {display:block;height:60px;margin-bottom:-60px;background:#000;opacity:.5;filter:alpha(opacity=50);}
+.viewerB .imgc:hover {border-color:#757575;}
+.viewerB .imgc.active {border-color:#fff;}
+.viewerB .imgc.active:before {visibility:hidden;}
+.viewerB .imgc img {vertical-align:middle;max-width:60px;max-height:60px;}
+.viewerB .imgcp {width:60px;height:60px;cursor:default;}
+.viewerB .imgcp:before {display:none}
+.viewerB .imgcp:hover {border-color:transparent;}

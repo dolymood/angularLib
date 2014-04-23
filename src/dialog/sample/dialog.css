@@ -1,0 +1,57 @@
+button,.btn {overflow: visible; width: auto; padding: 0; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; text-indent: 0; outline: 0; cursor: pointer; border: 0; background: none; }
+.btn {position: relative; display: inline-block; height: 29px; line-height: 29px; line-height: 32px\9; padding: 0 21px; font-size: 12px; text-align: center; vertical-align: middle; white-space: nowrap; background: #25ab5e; color: #fff; cursor: pointer; border-radius: 3px; text-shadow: 0 1px 1px rgba(0,0,0,.15); -webkit-transition: background 0.2s; transition: background 0.2s; }
+.btn_minor {background: #f5f6f7; color: #717171; }
+.btns3 {margin-left: auto; margin-right: auto; text-align: center; }
+
+
+/* overlay背景 */
+.overlay {z-index:1040;top:0;left:0;bottom:0;right:0;position:fixed;background:#000;opacity:.5;filter:alpha(opacity=50)}
+
+.dialog {z-index:1050;left:50%;top:51.8%;position:fixed;width:485px;min-height:200px;margin:-100px 0 0 -242px}
+.dialog2 {width:640px;height:460px;margin:-230px 0 0 -320px;}
+.dialog2 .dialogC {height:460px}
+	/* 关闭 */
+.dialogX {z-index:4;top:-40px;left:100%;position:relative;display:block;width:30px;height:30px;margin:0 10px -30px -40px;background:url(//s4.ksyun.com/i/4/175.png) no-repeat;}
+.dialogX:hover {background-position:0 -30px;}
+.dialogX:active {background-position:0 -60px;}
+	/* 标题 */
+.dialogT {z-index:3;top:-50px;position:relative;height:30px;line-height:30px;padding:10px 20px;margin:0 0 -50px;background-color:#25ab5e;color:#fff;border:1px solid #1b7f46;border-bottom:none;border-radius:2px 2px 0 0;font-size:18px;font-family:\5fae\8f6f\96c5\9ed1,\9ed1\4f53}
+	/* 内容 */
+.dialogC {-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;position:relative;min-height:130px;max-height:460px;overflow:auto;padding:36px;background-color:#fff;border:1px solid #1b7f46;border-top:none;border-radius:0 0 2px 2px}
+	/* 尾部 */
+.dialogB {top:-3px;z-index:4;position:relative;height:50px;padding:9px 36px 50px;margin:0 0 -109px;background-color:#fff;border:1px solid #1b7f46;border-top:none;border-radius:0 0 2px 2px}
+.dialogB .btn {font-size:18px;height:44px;line-height:44px;padding:0 84px;margin-left:10px;margin-right:10px;}
+
+	/* 加载中 */
+.dialogLoading {background:#fff url(//s4.ksyun.com/i/4/196.png) no-repeat center 30%!important;}
+.dialogLoading:before {content:'正在加载中...';}
+.dialogLoading:before {text-align:center;overflow:hidden;top:50%;height:26px;margin:0 auto -26px auto;position:relative;white-space:nowrap;display:block;color:#455469;font-size:16px;font-family:\5fae\8f6f\96c5\9ed1,\9ed1\4f53;}
+.dialogLoading * {visibility:hidden!important;}
+.dialogLoading .dialogT, .dialogLoading .dialogX {visibility:visible!important;}
+
+
+/* confirm窗 */
+.confirmDialog {width:360px;margin:-71px 0 0 -180px;min-height:100px;}
+.confirmDialog:after {content:'';display:block;top:0;left:0;right:0;bottom:0;position:fixed;background:transparent;}
+.confirmDialog .dialogX {top:-33px;margin-left:-35px;background-image:url(//s4.ksyun.com/i/2/153.png);}
+.confirmDialog .dialogT {height:38px;line-height:38px;padding:0 20px;margin-bottom:-38px;top:-38px;font-size:16px;box-shadow:0 -1px 5px 1px rgba(4,0,0,.28)}
+.confirmDialog .dialogT:after {content:'';position:relative;display:block;height:3px;margin:0 -20px -3px;background:#fff;}
+.confirmDialog .dialogB {height:55px;padding:20px 0 0;margin:0 0 -75px;box-shadow:0 1px 5px 1px rgba(4,0,0,.28)}
+.confirmDialog .dialogB:before {content:'';top:-23px;position:relative;display:block;height:3px;margin:0 0 -3px;background:#fff;}
+.confirmDialog .dialogC {min-height:102px;padding:40px 0 10px;font-size:16px;font-family:\5fae\8f6f\96c5\9ed1,\9ed1\4f53;text-align:center;box-shadow:0 0 5px 1px rgba(4,0,0,.28)}
+.confirmDialog .dialogC q {display:block;font-size:12px;color:#6d6d6d;}
+.confirmDialog .dialogC q:before {content:'（';}
+.confirmDialog .dialogC q:after {content:'）';}
+.confirmDialog .btn {min-width:66px;height:35px;line-height:35px;padding:0 20px;font-size:14px}
+@media \0screen {
+	.confirmDialog .dialogT {border:1px solid #C3C2C2
+;border-bottom:none;}
+	.confirmDialog .dialogC {border:1px solid #C3C2C2;border-top:none;border-bottom:none;}
+	.confirmDialog .dialogB {border:1px solid #C3C2C2;border-top:none;}
+}
+	/* 加载中 */
+.confirmDialog .confirmLoading {overflow:hidden;text-indent:-99em;background:#fff url(//s4.ksyun.com/i/4/186.gif) no-repeat center;}
+.confirmDialog .confirmLoading * {visibility:hidden!important;}
+	/* 窗 in 窗 */
+		/* 冻结 */
+.dialog + .confirmDialog:before {content:'';left: 0;right: 0;top: 0;bottom: 0;position: fixed}

@@ -540,7 +540,7 @@
 				totalDone += file.progress() * file.size;
 				totalSize += file.size;
 			});
-			return totalSize > 0 ? totalDone / totalSize : 0;
+			return totalSize > 0 ? totalDone / totalSize : 1;
 		},
 
 		/**
@@ -1035,7 +1035,7 @@
 				totalDone += file.progress() * file.size;
 				totalSize += file.size;
 			});
-			return totalSize > 0 ? totalDone / totalSize : 0;
+			return totalSize > 0 ? totalDone / totalSize : 1;
 		},
 
 		/**

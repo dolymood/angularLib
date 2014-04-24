@@ -58,7 +58,7 @@ button {overflow: visible; width: auto; padding: 0; -moz-box-sizing: content-box
 .viewerB:before {display:block;height:70px;margin-bottom:-70px;background:#000;opacity:.5;filter:alpha(opacity=50);}
 .viewerB .mc {margin-left:50%;position:relative;left:-70px;margin-right:-70px;}
 .viewerB .Bc {text-align:center;position:relative;height:70px;}
-.viewerB .imgc {text-indent:0;width:60px;height:60px;line-height:56px;display:inline-block;overflow:hidden;margin:3px;border:2px solid transparent;cursor:pointer;}
+.viewerB .imgc {vertical-align:top;text-indent:0;width:60px;height:60px;line-height:56px;display:inline-block;overflow:hidden;margin:3px;border:2px solid transparent;cursor:pointer;}
 .viewerB .imgc:before {content:''}
 .viewerB .imgc:before {display:block;height:60px;margin-bottom:-60px;background:#000;opacity:.5;filter:alpha(opacity=50);}
 .viewerB .imgc:hover {border-color:#757575;}

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<link rel="stylesheet" href="./scrollLoad.css">
+	<style>
+		.bd {width:300px;border:1px solid #333;}
+		body .bd:first-child {float:left;margin-left:0}
+		.bd1 {margin-left:350px;height:400px;overflow:auto;}
+	</style>
+	<script type="text/javascript" data-main="app" src="http://requirejs.org/docs/release/2.1.11/minified/require.js"></script>
+</head>
+<body>
+	<div class="bd" ngd-scroll-load="loadMore()" loaded-finish="loadedFinish" scroll-disabled="busy" scroll-elm="false">
+		<ul>
+			<li ng-repeat="item in list"><a href="#" ng-bind="item.name"></a></li>
+		</ul>
+	</div>
+	<div class="bd bd1" ngd-scroll-load="loadMore1()" loaded-finish="loadedFinish1" scroll-disabled="busy1" scroll-elm="true">
+		<ul ngd-scroll-elm>
+			<li ng-repeat="item in list1"><a href="#" ng-bind="item.name"></a></li>
+		</ul>
+	</div>
+</body>
+</html>

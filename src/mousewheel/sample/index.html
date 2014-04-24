@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<style>
+		body {min-height:2000px;}
+	</style>
+	<script type="text/javascript" data-main="app" src="http://requirejs.org/docs/release/2.1.11/minified/require.js"></script>
+</head>
+<body ngd-mousewheel="handerWheel($event, $wheelDelta)">
+	<ul>
+		<li ng-repeat="wheel in wheels" ng-bind="wheel.name"></li>
+	</ul>
+</body>
+</html>

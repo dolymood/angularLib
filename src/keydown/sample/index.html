@@ -6,6 +6,6 @@
 	<script type="text/javascript" data-main="app" src="http://requirejs.org/docs/release/2.1.11/minified/require.js"></script>
 </head>
 <body>
-	<input type="text" ng-model="name" ngd-enter="handerEnter($event, name)">
+	<input type="text" ng-model="name" ngd-keydown="handerEnter($event, name)" key-code="40">
 </body>
 </html>

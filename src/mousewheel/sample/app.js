@@ -13,18 +13,20 @@ require.config({
 
 require([
 	'angular',
-	'../enter'
+	'../mousewheel'
 ], function(angular) {
 	var appName = 'app'
 
-	angular.module(appName, ['enter'])
+	angular.module(appName, ['mousewheel'])
 
 	.run(['$rootScope', function($rootScope) {
 
-		$rootScope.name = 'XXXX';
+		$rootScope.wheels = [];
 
-		$rootScope.handerEnter = function(e, name) {
-			alert(name)
+		$rootScope.handerWheel = function(e, wheelDelta) {
+			$rootScope.wheels.push({
+				name: 'wheels--' + $rootScope.wheels.length + '--' + wheelDelta
+			});
 		};
 
 	}]);

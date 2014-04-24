@@ -1018,7 +1018,7 @@
 			for (var i = this.files.length - 1; i >= 0; i--) {
 				this.files[i].cancel(true);
 			}
-			this.flowObj.removeFolder(this);
+			this.flowObj.removeParsedFile(this);
 		},
 
 		/**

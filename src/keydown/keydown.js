@@ -21,6 +21,9 @@ define(['angular'], function(angular) {
 							handler($scope, {$event:evt})
 						}
 					};
+					if (iEle.prop('tabIndex') == -1) {
+						iEle.prop('tabIndex', 0);
+					}
 					iEle.on('keydown', keydowne);
 				};
 

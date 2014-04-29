@@ -21,7 +21,7 @@ require([
 
 	.run(['$rootScope', function($rootScope) {
 		
-		$rootScope.target = ''
+		$rootScope.target = '/'
 		$rootScope.flowObj = {
 			flow: null
 		};
@@ -44,10 +44,11 @@ require([
 		};
 		$rootScope.fileSuccess = function($file, $message) {
 			var id;
-			$message = angular.fromJson($message);
+			// $message = angular.fromJson($message);
 			// do ...
 		};
 		var parse2N = function(num) {
+			if (!num) return '0'
 			var k1, k2;
 			k1 = 1024 * 1024 * 1024;
 			k2 = 1024 * 1024;

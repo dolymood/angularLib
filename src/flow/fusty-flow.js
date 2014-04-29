@@ -319,7 +319,7 @@ function FustyFlowFile(flowObj, element) {
 			$.error = true;
 			$.maxsized = true;
 			$.abort();
-			$.flowObj.fire('fileError', $, error);
+			$.flowObj.fire('fileError', $, 'upload err');
 			$.flowObj.upload();
 			return;
 		}

@@ -32,6 +32,12 @@
 		 * Supported by browser?
 		 * @type {boolean}
 		 */
+		
+		// ie10 +
+		// ie 不能通过formdata上传0kb的文件
+		// 所以还是采用传统的方式
+		var ie10 = window.navigator.msPointerEnabled;
+
 		this.support = (
 				typeof File !== 'undefined' &&
 				typeof Blob !== 'undefined' &&
@@ -40,8 +46,10 @@
 					!!Blob.prototype.slice || !!Blob.prototype.webkitSlice || !!Blob.prototype.mozSlice ||
 					false
 				) // slicing files support
+				&& !ie10
 		);
 
+		
 		if (!this.support) {
 			return ;
 		}
@@ -540,7 +548,8 @@
 				totalDone += file.progress() * file.size;
 				totalSize += file.size;
 			});
-			return totalSize > 0 ? totalDone / totalSize : 1;
+			return totalSize > 0 ? totalDone / totalSize :
+							this.isComplete() ? 1 : 0;
 		},
 
 		/**
@@ -1035,7 +1044,8 @@
 				totalDone += file.progress() * file.size;
 				totalSize += file.size;
 			});
-			return totalSize > 0 ? totalDone / totalSize : 1;
+			return totalSize > 0 ? totalDone / totalSize : 
+							this.isComplete() ? 1 : 0;;
 		},
 
 		/**

@@ -313,9 +313,12 @@ function FustyFlowFile(flowObj, element) {
 		// when we remove iframe from dom
 		// the request stops, but in IE load
 		// event fires
+		if (!$.iFrame || !$.iFrame.parentNode) {
+			return;
+		}
 		var ts = new Date().getTime() - $.iFrame.startTs;
 		var doc = getDoc($.iFrame);
-		if (!doc || ts >= 29000 || ts <= 25) {
+		if (ts >= 29000 || ts <= 25) {
 			$.error = true;
 			$.maxsized = true;
 			$.abort();
@@ -323,8 +326,9 @@ function FustyFlowFile(flowObj, element) {
 			$.flowObj.upload();
 			return;
 		}
-		if (!$.iFrame || !$.iFrame.parentNode) {
-			return;
+		if (!doc) {
+			// todo ... IE10 IE11 如果跨域的话 取不到iframe的document
+			// 这里直接忽略 先认为是成功的
 		}
 		$.finished = true;
 		try {
@@ -341,7 +345,7 @@ function FustyFlowFile(flowObj, element) {
 		}
 		// iframe.contentWindow.document - for IE<7
 		// var doc = $.iFrame.contentDocument || $.iFrame.contentWindow.document;
-		var innerHtml = doc.body.innerHTML;
+		var innerHtml = doc && doc.body.innerHTML || '{}';
 		if ($.flowObj.opts.matchJSON) {
 			innerHtml = /(\{.*\})/.exec(innerHtml)[0];
 		}

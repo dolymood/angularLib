@@ -10,4 +10,6 @@ angular为基础的一些组件
 
 > flow: [ng-flow](https://github.com/flowjs/ng-flow)
 
+> scrollLoad: [ngInfiniteScroll](https://github.com/sroze/ngInfiniteScroll)
+
 > ...

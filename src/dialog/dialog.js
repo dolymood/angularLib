@@ -98,7 +98,7 @@ define(['angular', '../lang'], function(angular) {
 			},
 			replace: true, // 替换
 			transclude: true, // 嵌入
-			template: '<div class="dialog fade dialogLoading" ng-class="{in: animate, dialogLoading: noInsertClass}" ng-style="{\'z-index\': 1050 + index*10}" ng-transclude></div>',
+			template: '<div class="dialog fade dialogLoading" ng-class="{in: animate}" ng-style="{\'z-index\': 1050 + index*10}" ng-transclude></div>',
 			link: function (scope, element, attrs) {
 				scope.$on('dataLoaded', function() {
 					element.removeClass('dialogLoading');
@@ -109,7 +109,9 @@ define(['angular', '../lang'], function(angular) {
 						}
 					}
 				});
-				// scope.noInsertClass = true;//!loaded && (attrs.insert == '');
+				if (attrs.insert) {
+					element.removeClass('dialogLoading');
+				}
 				//trigger CSS transitions
 				$timeout(function () {
 					scope.animate = true;

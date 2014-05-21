@@ -98,6 +98,7 @@ define(['angular', '../lang'], function(angular) {
 
 					// 校验是否需要load数据
 					function checkLoad() {
+						if ($scope.loadedFinish) return;
 						var scrollEle = $scope.scrollEle[0],
 								eleHeight = getHeight(scrollEle),
 								elementBottom, remaining, shouldScroll, windowBottom;

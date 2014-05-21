@@ -240,6 +240,11 @@ define([], function() {
       if (this.zoom <= 20) {
         w = 20 / 100 * this.ow;
         h = 20 / 100 * this.oh;
+        var t = w;
+        if (this.reverse) {
+          w = h;
+          h = t;
+        }
       }
       // this.lastW = this.w;
       // this.lastH = this.h;
@@ -262,7 +267,11 @@ define([], function() {
 
     computeScale: function(w) {
       w || (w = this.w)
-      this.zoom = w / this.ow * 100;
+      var ow = this.ow;
+      if (this.reverse) {
+        ow = this.oh;
+      }
+      this.zoom = w / ow * 100;
       if (this.zoom < 20) {
         this.zoom = 20;
       }

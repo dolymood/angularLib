@@ -234,6 +234,9 @@ define([], function() {
     scale: function(scale, poi) {
       var w = this.w;
       var h = this.h;
+      if (this.zoom <= 20 && scale < 0) {
+        return;
+      }
       w += w*scale*this.options.scaleNum;
       h += h*scale*this.options.scaleNum;
       this.computeScale(w);
@@ -466,6 +469,7 @@ define([], function() {
       this.imgStyle.height = '';
       this.refresh();
       // this.checkBoundary(true);
+      this.zoom = 100;
       this.checkSize();
       this.center({
         x:0,

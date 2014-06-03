@@ -13,7 +13,7 @@ define(['angular'], function(angular) {
 					var evtName = 'mousewheel';
 					try {
 						document.createEvent('MouseScrollEvents')
-						mousewheelName = 'DOMMouseScroll'
+						evtName = 'DOMMouseScroll'
 					} catch (e) {}
 					iEle.on(evtName, function(evt) {
 						var delta;

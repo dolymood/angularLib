@@ -43,7 +43,7 @@ button {overflow: visible; width: auto; padding: 0; -moz-box-sizing: content-box
 .viewerC .rightH:hover .cr {background-position:-60px 0;}
 .viewerC .rightH:active .cr {background-position:-120px 0;}
 .viewerC .viewer {position:relative;height:100%;padding:0 70px;}
-.viewerC .imgBder {height:100%;width:100%;overflow:hidden;}
+.viewerC .imgBder {height:100%;width:100%;overflow:hidden;text-align:center;}
 .viewerC .imgBder.imgLoading {background:url(//s4.ksyun.com/i/4/006.png) no-repeat center}
 .viewerC .imgBder:before {content:''}
 .viewerC .imgBder:before {display:inline-block;width:0;height:100%;vertical-align:middle;}

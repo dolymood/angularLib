@@ -100,12 +100,25 @@ define([], function() {
     this.options.movingCheck = !!this.options.movingCheck;
     this.options.shiftWheelZoom = !!this.options.shiftWheelZoom;
     newImg.src = this.img.src;
+    var loaded = false;
+    this.error = false;
     if (!newImg.complete) {
-      newImg.onload = newImg.onerror = function() {
-        that.img.style.display = 'block';
+      newImg.onload = function() {
+        if (loaded) return;
+        loaded = true;
+        that.img.style.display = 'inline-block';
         that.container = getParentElement(img);
         that.init();
         that.bindEvts();
+      };
+      newImg.onerror = function() {
+        if (loaded) return;
+        loaded = true;
+        // 出错时啥也不干了
+        that.error = true;
+        that.img.style.display = 'inline-block';
+        that.init();
+        that.img.style.visibility = 'visible';
       };
       var interval = setInterval(function() {
         if (newImg.complete) {
@@ -114,8 +127,9 @@ define([], function() {
         }
       }, 100)
     } else {
+      loaded = true;
       setTimeout(function() {
-        that.img.style.display = 'block';
+        that.img.style.display = 'inline-block';
         that.container = getParentElement(img);
         that.init();
         that.bindEvts();
@@ -150,6 +164,7 @@ define([], function() {
 
     init: function() {
       if (this.options.onload) this.options.onload();
+      if (this.error) return;
       this.initPos = {
         x: 0,
         y: 0
@@ -232,10 +247,11 @@ define([], function() {
     },
 
     scale: function(scale, poi) {
+      if (this.error) return;
       var w = this.w;
       var h = this.h;
       if (this.zoom <= 20 && scale < 0) {
-        return;
+        return
       }
       w += w*scale*this.options.scaleNum;
       h += h*scale*this.options.scaleNum;
@@ -455,6 +471,7 @@ define([], function() {
     },
 
     rotate: function(deg) {
+      if (this.error) return;
       this.center({
         x: 0,
         y: 0

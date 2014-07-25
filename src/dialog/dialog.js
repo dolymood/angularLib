@@ -349,11 +349,7 @@ define(['angular', '../lang'], function(angular) {
 					$timeout(function() {
 						modalInstance.close();
 					}, 0);
-					if (KP.alert) {
-						KP.alert('加载失败，请重试');
-					} else {
-						alert('加载失败，请重试');
-					}
+					alert('加载失败，请重试');
 				});
 
 				templateAndResolvePromise.then(function () {

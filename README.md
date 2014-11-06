@@ -1,16 +1,16 @@
 angularLib
 ==========
 
-angular为基础的一些组件
+## angular为基础的一些组件封装
 
-> 依赖于angular requireJS
+> 依赖于angular requireJS（AMD写法）
 
 > src下的：
 >> `lang.js`: 做了一些基对angular的扩展
 
 >> `browserPrefix.js`: 浏览器前缀的一些检测
 
-### 目前主要包含的组件有：  ###
+### 目前主要包含的组件有：
 
 > `deledates`: angular的事件代理
 
@@ -32,6 +32,7 @@ angular为基础的一些组件
 > `selection`: 选择指令，选择input类元素中的内容，支持选择部分内容，通过属性指定选择区域（sln-start：开始位置-默认0，sln-end: 结束位置-默认最后末尾）
 
 PS: 有一些是在别人的代码基础上做了修改，根据需求做了进一步的修改:
+
 > `dialog`: [modal](https://github.com/angular-ui/bootstrap/tree/master/src/modal)
 
 > `flow`: [ng-flow](https://github.com/flowjs/ng-flow)

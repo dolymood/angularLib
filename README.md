@@ -6,16 +6,18 @@ angularLib
 * 依赖于angular requireJS（AMD写法）
 
 * src下的：
-** `lang.js`: 做了一些基对angular的扩展
+ 
+  * `lang.js`: 做了一些基对angular的扩展
 
-** `browserPrefix.js`: 浏览器前缀的一些检测
+  * `browserPrefix.js`: 浏览器前缀的一些检测
 
 ### 目前主要包含的组件有：
 
 * `deledates`: angular的事件代理
 
 * `dialog`: dialog弹框
-** `confirm`: 基于dialog的confirm框
+
+  * `confirm`: 基于dialog的confirm框
 
 * `flow`: 文件上传（对于支持文件夹上传的浏览器会将文件夹整合到一块，看起来可以是一个文件夹在上传）
 
